@@ -1,0 +1,18 @@
+mkdir ~/bin
+cp bin/* ~/bin
+
+echo "check profile localization"
+cat profile.d/*
+
+while [ 1 ]; do
+	echo "PROFILE OK? yn" ; read yn
+	case $yn in
+	y)
+		break;;
+	n)
+		echo quit on user request
+		exit 1;;
+	esac
+done
+
+sudo cp profile.d/* /etc/profile.d
