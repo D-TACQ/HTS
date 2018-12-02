@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ARCH=${HTSARCHIVE:-$(dirname ${HTSDATA})/SHOTS}
+
+if [ "x$1" = "x" ]; then
+	du -sh ${ARCH}/*
+else
+	for x in $*; do
+		du -sh ${ARCH}/*$x/*
+	done
+fi
+
+
+

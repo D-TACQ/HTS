@@ -2,7 +2,11 @@ mkdir ~/bin
 cp bin/* ~/bin
 
 echo "check profile localization"
-cat profile.d/*
+cat profile.d/acq2106_hts.sh
+source profile.d/acq2106_hts.sh
+[ -e $HAPI ] && echo $HAPI exists
+[ -e $AFHBA ] && echo $AFHBA exists
+[ -e $HTSDATA ] && echo $HTSDATA exists
 
 while [ 1 ]; do
 	echo "PROFILE OK? yn" ; read yn

@@ -1,0 +1,10 @@
+#!/bin/bash
+UUT=${1}
+LPORT=${2}
+SECS=${3}
+RPORT=${4}
+cd /home/dt100/PROJECTS/ACQ400/HAPI/acq400_hapi/user_apps/acq2106
+./acq2106_hts.py --secs=${SECS} --comms${RPORT}=1,2,3,4,5,6 \
+        --datahandler='sudo /home/dt100/PROJECTS/AFHBA404/scripts/run-mir1-stream-to-flash {} {}' \
+        --lport=${LPORT} --nbuffers=50000 --decimate=10 ${UUT}
+

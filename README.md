@@ -7,4 +7,5 @@ High Throughput Streaming shim to install multiple UUTS in HTS
 
 ## Deploy. Trampoline scripts to ~/bin
 ## Customise: acq2106_hts.sh
+Check the paths in this file before deploy
 
